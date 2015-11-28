@@ -1,0 +1,14 @@
+{
+    "name": "yann/swoole-demo",
+    "description": "This is s swoole demo",
+    "authors": [
+        {
+            "name": "Yannyezixin",
+            "email": "646840080@qq.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {"ysd\\": "src/"}
+    }
+}
