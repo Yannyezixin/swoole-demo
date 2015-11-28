@@ -29,7 +29,7 @@ class Helper
         }
 
         // 输出
-        echo "[{$levels[$level]}] " . date("H:i:s") . self::getMicrotime() . " : {$msg} \n";
+        echo "[{$levels[$level]}] " . date("H:i:s.") . self::getMicrotime() . " : {$msg} \n";
     }
 
     /**
