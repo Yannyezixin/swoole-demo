@@ -2,11 +2,11 @@
 
 define("LOG_UNKNOWN", 0);
 
-define("LOG_INFO", 1);
+//define("LOG_INFO", 1);
 
 define("LOG_WARNNING", 2);
 
-define("LOG_DEBUG", 3);
+//define("LOG_DEBUG", 3);
 
 define("LOG_ERROR", 4);
 
@@ -20,11 +20,11 @@ class Helper
     /**
      * 日志输出
      */
-    public static function log($msg, $level = LOG_INFO)
+    public static function log($msg, $level = 1)
     {
-        $levels = [LOG_UNKNOWN, INFO, WARNNING, DEBUG, ERROR, DANGGER];
+        $levels = ["UNKNOWN", "INFO", "WARNNING", "DEBUG", "ERROR", "DANGGER"];
 
-        if (!in_array($level, $levels)) {
+        if (!in_array($level, array_keys($levels))) {
             $level = LOG_UNKNOWN;
         }
 

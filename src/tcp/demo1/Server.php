@@ -1,6 +1,7 @@
 <?php namespace ysd\tcp\demo1;
 
 use ysd\lib\Helper;
+use swoole_server;
 
 /**
  * TCP Server
@@ -25,7 +26,7 @@ class Server
         ]);
 
         $this->serv->on('Start', [$this, 'onStart']);
-        $this->serv->on('Connenct', [$this, 'onConnect']);
+        $this->serv->on('Connect', [$this, 'onConnect']);
         $this->serv->on('Receive', [$this, 'onReceive']);
         $this->serv->on('Close', [$this, 'onClose']);
 
@@ -35,7 +36,7 @@ class Server
     // 启动
     public function onStart($serv)
     {
-        Helper::log("Start tcp server , listen on port: {$port}");
+        Helper::log("Start tcp server , listen on port: {$this->port}");
     }
 
     // 连接
