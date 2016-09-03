@@ -44,7 +44,9 @@ class Client
         swoole_event_add(STDIN, function ($fp) use ($cli) {
             fwrite(STDOUT, "");
             $msg = trim(fgets(STDIN));
-            $cli->send($msg);
+            if (!empty($msg)) {
+                $cli->send($msg);
+            }
         });
     }
 

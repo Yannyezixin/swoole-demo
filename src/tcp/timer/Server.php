@@ -23,10 +23,13 @@ class Server
             'daemonize' => false,
             'max_request' => 10000,
             'dispatch_mode' => 2,
-            'debug_mode' => 1
+            'debug_mode' => 1,
+            # 心跳检测
+            'heartbeat_check_interval' => 1,
+            'heartbeat_idle_time' => 10,
         ]);
 
-        $this->serv->on('WorkerStart', [$this, 'onWorkerStart']);
+        //$this->serv->on('WorkerStart', [$this, 'onWorkerStart']);
         $this->serv->on('Start', [$this, 'onStart']);
         $this->serv->on('Connect', [$this, 'onConnect']);
         $this->serv->on('Receive', [$this, 'onReceive']);
